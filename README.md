@@ -2,7 +2,7 @@
 Create a beautiful blurry background with simple code and less work.
 
 Use this layout to place views above it while keeping the background awesome. Use your image and colors to come up 
-with a cool layout that matches yorur needs
+with a cool layout that matches your needs
 ## Screenshot
 <img src="/Screenshots/device-2018-10-11-002239.png" width="300px">
 
