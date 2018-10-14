@@ -30,6 +30,11 @@ In your `layout.xml` file, set the parent layout as:
 
 In your activity class you need to pass the image to be used as background;
 
+Create an instance of the class like:
+```java
+BlurryLayout blurLayout = findViewById(R.id.blurLayout);
+```
+
 ### Image blur
 
 Set image and blur radius as
@@ -40,7 +45,7 @@ blurLayout.blurBackground(bitmap,10);
 **Note:** blur radius takes ```int```. It determines the amount of the blur effect.
 
 ### Blur color
-Set as 
+Set as:
 ```java 
 blurLayout.blurColor(Color.WHITE);
 ```
@@ -51,7 +56,7 @@ textviews with light color will need a darker blur color and vice versa.
 **Note:** blur color takes `int`.
 
 ### Blur opacity
-set as 
+set as:
 ```java 
 blurLayout.blurOpacity(0.3f);
 ```
@@ -59,3 +64,5 @@ blurLayout.blurOpacity(0.3f);
 Determines the opacity of the blurry backgroud. Higher values mean the blur color is more visible and vice versa.
 It takes `float`
 
+##
+Made with :blue_heart: by [revosleap](https://revosleap.com/).
