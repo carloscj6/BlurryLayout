@@ -6,7 +6,14 @@ with a cool layout that matches yorur needs
 ## Screenshot
 ![alt text](https://github.com/carloscj6/BlurryLayout/blob/master/Screenshots/device-2018-10-11-002239.png "Blurry Layout")
 ## Setup
-First include the library in your project with:
+In your project level gradle include:
+
+`maven {
+            url  "https://dl.bintray.com/carloscj6/layout"
+        }`
+        
+        
+Then include the library in your app level gradle with:
 
 `implementation 'com.revosleap.layout:blurrylayout:1.0.0'`
 
