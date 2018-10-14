@@ -7,14 +7,7 @@ with a cool layout that matches your needs
 <img src="/Screenshots/device-2018-10-11-002239.png" width="300px">
 
 ## Setup
-In your project level gradle include:
-
-`maven {
-            url  "https://dl.bintray.com/carloscj6/layout"
-        }`
-        
-        
-Then include the library in your app level gradle with:
+First include the library in your project with:
 
 ```gradle
 dependencies {
