@@ -1,5 +1,8 @@
 # BlurryLayout
 Create a beautiful blurry background with simple code and less work.
+
+Use this layout to place views above it while keeping the background awesome. Use your image and colors to come up 
+with a cool layout that matches yorur needs
 ## Screenshot
 ![alt text](https://github.com/carloscj6/BlurryLayout/blob/master/Screenshots/device-2018-10-11-002239.png "Blurry Layout")
 ## Setup
