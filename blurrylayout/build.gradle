@@ -1,4 +1,28 @@
 apply plugin: 'com.android.library'
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'blurrylayout'
+
+    publishedGroupId = 'com.revosleap.layout'
+    libraryName = 'BlurryLayout'
+    artifact = 'blurrylayout'
+
+    libraryDescription = 'A beautiful blurry background in your layout'
+
+    siteUrl = 'https://github.com/carloscj6/BlurryLayout'
+    gitUrl = 'https://github.com/carloscj6/KtBlurryLayout.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'carloscj6'
+    developerName = 'Carlos Anyona'
+    developerEmail = 'anyona6.cj@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 
 android {
     compileSdkVersion 28
@@ -6,7 +30,7 @@ android {
 
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -21,6 +45,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
 
 }
 
@@ -31,4 +60,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
 }
+
+repositories {
+    mavenCentral()
+}
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

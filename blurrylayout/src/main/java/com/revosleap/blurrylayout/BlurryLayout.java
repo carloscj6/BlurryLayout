@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 
+
+
 public class BlurryLayout extends FrameLayout {
     private LinearLayout linearLayout;
     private ImageView imageView;
