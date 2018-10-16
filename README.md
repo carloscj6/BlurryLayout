@@ -11,7 +11,7 @@ First include the library in your project with:
 
 ```gradle
 dependencies {
-    implementation 'com.revosleap.layout:blurrylayout:1.0.0'
+    implementation 'com.revosleap.layout:blurrylayout:1.0.1'
 }
 ```
 
@@ -27,7 +27,36 @@ In your `layout.xml` file, set the parent layout as:
     tools:context=".Blurry">
 </com.revosleap.blurrylayout.BlurryLayout>
 ```
+### Xml Attributes
+You can set `xml` atttributes to you layout as follows:
 
+create namespace declaration ` xmlns:app="http://schemas.android.com/apk/res-auto"`
+then add attributes as:
+```xml
+    app:blurColor="@android:color/white" <!--takes Color value int-->
+    app:blurOpacity=".4" <!--takes value float-->
+    app:blurImage="@drawable/together" <!--takes image drawable-->
+    app:blurRadius="13" <!--takes value int-->
+```
+**Sample**
+```xml
+<com.revosleap.blurrylayout.BlurryLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/blurLayout"
+    tools:context=".Blurry"
+    app:blurColor="@android:color/white"
+    app:blurOpacity=".4"
+    app:blurImage="@drawable/together"
+    app:blurRadius="13"
+    >
+```
+    
+### Programatically
 In your activity class you need to pass the image to be used as background;
 
 Create an instance of the class like:
