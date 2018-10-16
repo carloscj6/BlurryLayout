@@ -3,6 +3,5 @@
     <declare-styleable name="BlurryLayout">
         <attr name="blurColor" format="color"/>
         <attr name="blurOpacity" format="float"/>
-        <attr name="blurImage" format="reference" />
     </declare-styleable>
 </resources>
