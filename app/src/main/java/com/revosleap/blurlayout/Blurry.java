@@ -1,7 +1,5 @@
 package com.revosleap.blurlayout;
 
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
@@ -10,7 +8,8 @@ import com.revosleap.blurrylayout.BlurryLayout;
 
 
 public class Blurry extends AppCompatActivity {
-    BlurryLayout blurLayout;
+    private BlurryLayout blurLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +17,7 @@ public class Blurry extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_blurry);
         blurLayout= findViewById(R.id.blurLayout);
-        blurLayout.blurBackground(BitmapFactory.decodeResource(getResources(),R.drawable.together),10);
+       // blurLayout.blurBackground(getResources().getDrawable(R.drawable.past),10);
 
     }
 }

@@ -8,7 +8,7 @@ import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 
 
-public class GaussianBlur {
+class GaussianBlur {
     private static Bitmap blurry;
 
 

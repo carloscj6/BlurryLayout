@@ -9,6 +9,8 @@
     tools:context=".Blurry"
     app:blurColor="@android:color/white"
     app:blurOpacity=".4"
+    app:blurImage="@drawable/together"
+    app:blurRadius="13"
     >
 
     <TextView
