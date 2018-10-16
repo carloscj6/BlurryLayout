@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BlurryLayout">
+        <attr name="blurColor" format="color"/>
+        <attr name="blurOpacity" format="float"/>
+        <attr name="blurImage" format="reference" />
+    </declare-styleable>
+</resources>

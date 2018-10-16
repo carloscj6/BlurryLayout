@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 ext {
-    bintrayRepo = 'maven'
+    bintrayRepo = 'layout'
     bintrayName = 'blurrylayout'
 
     publishedGroupId = 'com.revosleap.layout'
@@ -10,7 +10,7 @@ ext {
     libraryDescription = 'A beautiful blurry background in your layout'
 
     siteUrl = 'https://github.com/carloscj6/BlurryLayout'
-    gitUrl = 'https://github.com/carloscj6/KtBlurryLayout.git'
+    gitUrl = 'https://github.com/carloscj6/BlurryLayout.git'
 
     libraryVersion = '1.0.0'
 

@@ -19,7 +19,6 @@ public class Blurry extends AppCompatActivity {
         setContentView(R.layout.activity_blurry);
         blurLayout= findViewById(R.id.blurLayout);
         blurLayout.blurBackground(BitmapFactory.decodeResource(getResources(),R.drawable.together),10);
-        blurLayout.blurColor(Color.WHITE);
-        blurLayout.blurOpacity(0.3f);
+
     }
 }
