@@ -94,4 +94,4 @@ Determines the opacity of the blurry backgroud. Higher values mean the blur colo
 It takes `float`
 
 ##
-Made with :blue_heart: by [revosleap](https://revosleap.com/).
+Coded with :blue_heart: by [revosleap](https://revosleap.com/).
