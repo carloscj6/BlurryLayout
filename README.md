@@ -52,32 +52,49 @@ then add attributes as:
     app:blurColor="@android:color/white"
     app:blurOpacity=".4"
     app:blurImage="@drawable/together"
-    app:blurRadius="13"
-    >
+    app:blurRadius="13" >
 ```
     
 ### Programatically
 In your activity class you need to pass the image to be used as background;
 
 Create an instance of the class like:
+> Java
 ```java
 BlurryLayout blurLayout = findViewById(R.id.blurLayout);
+```
+or
+> Kotlin
+```kotlin
+val blurLayout = findViewById(R.id.blurLayout) as BlurryLayout
 ```
 
 ### Image blur
 
-Set image and blur radius as
+Set image and blur radius as:
+> Java
 ```java
 blurLayout.blurBackground(bitmap,10);
 ```
-
+or 
+> Kotlin
+```kotlin
+blurLayout.blurBackground(bitmap, 10)
+```
 **Note:** blur radius takes ```int```. It determines the amount of the blur effect.
 
 ### Blur color
 Set as:
+> Java
 ```java 
 blurLayout.blurColor(Color.WHITE);
 ```
+or 
+> Kotlin
+```kotlin
+blurLayout.blurColor = Color.WHITE
+```
+
 This is the color of the background blur. 
 
 Can be determined by the color of views above it. Example,
@@ -86,10 +103,15 @@ textviews with light color will need a darker blur color and vice versa.
 
 ### Blur opacity
 set as:
+> Java
 ```java 
 blurLayout.blurOpacity(0.3f);
 ```
-
+or
+> Kotlin 
+```kotlin
+blurLayout.blurOpacity = 0.3F
+```
 Determines the opacity of the blurry backgroud. Higher values mean the blur color is more visible and vice versa.
 It takes `float`
 
