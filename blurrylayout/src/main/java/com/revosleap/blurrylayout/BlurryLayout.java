@@ -66,7 +66,7 @@ public class BlurryLayout extends FrameLayout {
         linearLayout.setAlpha(ALPHA);
 
     }
-
+    //Its good to allow programatic setting
     public void blurColor(int blurColor){
         linearLayout.setBackgroundColor(blurColor);
     }
