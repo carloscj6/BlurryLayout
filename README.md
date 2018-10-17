@@ -114,6 +114,10 @@ blurLayout.blurOpacity = 0.3F
 ```
 Determines the opacity of the blurry backgroud. Higher values mean the blur color is more visible and vice versa.
 It takes `float`
+## Contributions
+Feel free to fork and create pull requests
+
+Thanks to [@kevin-kip]( https://github.com/Kevin-Kip) for improving `readme` and `kotlin` guide.
 
 ##
 Coded with :blue_heart: by [revosleap](https://revosleap.com/).
