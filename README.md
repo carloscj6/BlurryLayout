@@ -28,7 +28,7 @@ In your `layout.xml` file, set the parent layout as:
 </com.revosleap.blurrylayout.BlurryLayout>
 ```
 ### Xml Attributes
-You can set `xml` atttributes to you layout as follows:
+You can set `xml` atttributes to your layout as follows:
 
 create namespace declaration ` xmlns:app="http://schemas.android.com/apk/res-auto"`
 then add attributes as:
