@@ -3,6 +3,9 @@ Create a beautiful blurry background with simple code and less work.
 
 Use this layout to place views above it while keeping the background awesome. Use your image and colors to come up 
 with a cool layout that matches your needs
+
+[![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
+
 ## Screenshot
 <img src="/Screenshots/device-2018-10-11-002239.png" width="300px">
 
