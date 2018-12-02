@@ -14,7 +14,7 @@ First include the library in your project with:
 
 ```gradle
 dependencies {
-    implementation 'com.revosleap.layout:blurrylayout:1.0.1'
+    implementation 'com.revosleap.layout:blurrylayout:1.0.2'
 }
 ```
 
@@ -77,12 +77,17 @@ val blurLayout = findViewById(R.id.blurLayout) as BlurryLayout
 Set image and blur radius as:
 > Java
 ```java
-blurLayout.blurBackground(bitmap,10);
+blurLayout.setBitmapBlurry(bitmap,20);
 ```
-or 
+if you have a bigger image that doesn't look well with above code just do this;
+```java
+blurLayout.setBitmapBlurry(bitmap,10,20);
+```
+whereby the second int is the amount of resizing to achieve desired blur.
+
 > Kotlin
 ```kotlin
-blurLayout.blurBackground(bitmap, 10)
+blurLayout.setBitmapBlurry(bitmap,20);
 ```
 **Note:** blur radius takes ```int```. It determines the amount of the blur effect.
 
