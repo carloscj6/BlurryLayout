@@ -40,11 +40,11 @@ class GaussianBlur {
         return bitmap;
     }
     private static Bitmap colorEncodingChange(Bitmap img)throws Exception {
-        int pixelNum= img.getWidth()/4*img.getHeight()/4;
+        int pixelNum= img.getWidth()*img.getHeight();
         int[] pixels= new int[pixelNum];
         img.getPixels(pixels,0,img.getWidth(),0,0,img.getWidth(),img.getHeight());
         Bitmap result= Bitmap.createBitmap(img.getWidth(),img.getHeight(), Bitmap.Config.ARGB_8888);
-        result.setPixels(pixels,0,result.getWidth()/4,0,0,result.getWidth()/4,result.getHeight());
+        result.setPixels(pixels,0,result.getWidth(),0,0,result.getWidth(),result.getHeight());
         return result;
     }
 

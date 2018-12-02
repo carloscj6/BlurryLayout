@@ -75,11 +75,40 @@ public class BlurryLayout extends FrameLayout {
     }
 
     //Allow programmatic setting of image and blur radius
+    @Deprecated
     public void blurBackground( Drawable imageDr,int radius) {
         Bitmap image=((BitmapDrawable)imageDr).getBitmap();
         int height=image.getHeight();
         int width=image.getWidth();
-        Bitmap background=ThumbnailUtils.extractThumbnail(image,height*3/100,width*3/100);
+        Bitmap background=ThumbnailUtils.extractThumbnail(image,width*3/100,height*3/100);
         imageView.setImageBitmap(GaussianBlur.blurred(getContext(),background,radius));
+    }
+    public void setDrawableBlur( Drawable imageDr,int radius) {
+        Bitmap image=((BitmapDrawable)imageDr).getBitmap();
+        int height=image.getHeight();
+        int width=image.getWidth();
+        Bitmap background=ThumbnailUtils.extractThumbnail(image,width,height);
+        imageView.setImageBitmap(GaussianBlur.blurred(getContext(),background,radius));
+    }
+    public void setDrawableBlurry( Drawable imageDr,int radius,int blurPercentage) {
+        Bitmap image=((BitmapDrawable)imageDr).getBitmap();
+        int height=image.getHeight();
+        int width=image.getWidth();
+        Bitmap background=ThumbnailUtils.extractThumbnail(image,width*blurPercentage/100,height*blurPercentage/100);
+        imageView.setImageBitmap(GaussianBlur.blurred(getContext(),background,radius));
+    }
+
+
+    public void setBitmapBlur(Bitmap bitmapBlur, int radius){
+        int height= bitmapBlur.getHeight();
+        int width= bitmapBlur.getWidth();
+        Bitmap bg= ThumbnailUtils.extractThumbnail(bitmapBlur,width,height);
+        imageView.setImageBitmap(GaussianBlur.blurred(getContext(),bg,radius));
+    }
+    public void setBitmapBlurry(Bitmap bitmapBlur, int radius,int blurPercentage){
+        int height= bitmapBlur.getHeight();
+        int width= bitmapBlur.getWidth();
+        Bitmap bg= ThumbnailUtils.extractThumbnail(bitmapBlur,width*blurPercentage/100,height*blurPercentage/100);
+        imageView.setImageBitmap(GaussianBlur.blurred(getContext(),bg,radius));
     }
 }
