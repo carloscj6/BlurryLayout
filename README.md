@@ -4,6 +4,7 @@ Create a beautiful blurry background with simple code and less work.
 Use this layout to place views above it while keeping the background awesome. Use your image and colors to come up 
 with a cool layout that matches your needs
 
+[ ![Download](https://api.bintray.com/packages/carloscj6/layout/blurrylayout/images/download.svg?version=1.0.2) ](https://bintray.com/carloscj6/layout/blurrylayout/1.0.2/link)
 [![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
 
 ## Screenshot
