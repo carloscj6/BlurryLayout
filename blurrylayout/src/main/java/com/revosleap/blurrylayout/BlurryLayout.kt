@@ -12,7 +12,7 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
-import java.lang.NullPointerException
+import kotlin.NullPointerException
 
 /**
  * @property BlurryLayout custom layout that extends FrameLayout
@@ -22,13 +22,13 @@ class BlurryLayout @JvmOverloads constructor(context: Context, attrs: AttributeS
     private val linearLayout: LinearLayout
     private val imageView: ImageView
     private val imageDrawable: Drawable?
-    private var DEFAULT_IMAGE: Drawable
+    private var DEFAULT_IMAGE: Drawable? = null
 
     init {
         View.inflate(context, R.layout.blurry_layout, this)
         linearLayout = findViewById(R.id.linearLayout)
         imageView = findViewById(R.id.imageView)
-        DEFAULT_IMAGE = ContextCompat.getDrawable(context, R.drawable.image)!!
+        DEFAULT_IMAGE = ContextCompat.getDrawable(context, R.drawable.image)
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.BlurryLayout, defStyleAttr, 0)
         BLUR_COLOR = typedArray.getColor(R.styleable.BlurryLayout_blurColor, DEFAULT_BLUR_COLOR)
         ALPHA = typedArray.getFloat(R.styleable.BlurryLayout_blurOpacity, DEFAULT_ALPHA)
@@ -40,7 +40,7 @@ class BlurryLayout @JvmOverloads constructor(context: Context, attrs: AttributeS
 
 
     private fun setImageBg() {
-        val bg: Drawable
+        val bg: Drawable?
         if (imageDrawable != null) {
             //To get a good effect from user image
             setDrawableBlur(imageDrawable)
