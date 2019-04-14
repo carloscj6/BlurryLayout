@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
+import java.lang.NullPointerException
 
 /**
  * @property BlurryLayout custom layout that extends FrameLayout
@@ -45,7 +46,10 @@ class BlurryLayout @JvmOverloads constructor(context: Context, attrs: AttributeS
         } else {
             bg = DEFAULT_IMAGE
             val image = (bg as? BitmapDrawable)?.bitmap
-            imageView.setImageBitmap(GaussianBlur.blurred(context, image!!, BLUR_RADIUS))
+            try {
+                imageView.setImageBitmap(GaussianBlur.blurred(context, image!!, BLUR_RADIUS))
+            } catch (e: NullPointerException) {
+            }
         }
 
         linearLayout.setBackgroundColor(BLUR_COLOR)
