@@ -1,7 +1,6 @@
 package com.revosleap.blurrylayout
 
 import android.content.Context
-import android.content.res.TypedArray
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
@@ -40,7 +39,7 @@ class BlurryLayout @JvmOverloads constructor(context: Context, attrs: AttributeS
         val bg: Drawable
         if (imageDrawable != null) {
             //To get a good effect from user image
-            blurBackground(imageDrawable, BLUR_RADIUS)
+            setDrawableBlur(imageDrawable)
         } else {
             bg = DEFAULT_IMAGE
             val image = (bg as BitmapDrawable).bitmap
@@ -52,7 +51,7 @@ class BlurryLayout @JvmOverloads constructor(context: Context, attrs: AttributeS
 
     }
 
-    //Its good to allow programatic setting
+
     fun blurColor(blurColor: Int) {
         linearLayout.setBackgroundColor(blurColor)
     }
@@ -61,53 +60,43 @@ class BlurryLayout @JvmOverloads constructor(context: Context, attrs: AttributeS
         linearLayout.alpha = bluropacity
     }
 
-    //Allow programmatic setting of image and blur radius
-    @Deprecated("")
-    fun blurBackground(imageDr: Drawable, radius: Int) {
-        val image = (imageDr as BitmapDrawable).bitmap
-        val height = image.height
-        val width = image.width
-        val background = ThumbnailUtils.extractThumbnail(image, width * 3 / 100, height * 3 / 100)
-        imageView.setImageBitmap(GaussianBlur.blurred(context, background, radius))
-    }
-
-    fun setDrawableBlur(imageDr: Drawable, radius: Int) {
-        val image = (imageDr as BitmapDrawable).bitmap
-        val height = image.height
-        val width = image.width
-        val background = ThumbnailUtils.extractThumbnail(image, width, height)
-        imageView.setImageBitmap(GaussianBlur.blurred(context, background, radius))
-    }
-
-    fun setDrawableBlurry(imageDr: Drawable, radius: Int, blurPercentage: Int) {
-        val image = (imageDr as BitmapDrawable).bitmap
+    fun setDrawableBlur(imageDrawable: Drawable, radius: Int, blurPercentage: Int) {
+        val image = (imageDrawable as BitmapDrawable).bitmap
         val height = image.height
         val width = image.width
         val background = ThumbnailUtils.extractThumbnail(image, width * blurPercentage / 100, height * blurPercentage / 100)
         imageView.setImageBitmap(GaussianBlur.blurred(context, background, radius))
     }
 
-
-    fun setBitmapBlur(bitmapBlur: Bitmap, radius: Int) {
-        val height = bitmapBlur.height
-        val width = bitmapBlur.width
-        val bg = ThumbnailUtils.extractThumbnail(bitmapBlur, width, height)
-        imageView.setImageBitmap(GaussianBlur.blurred(context, bg, radius))
+    fun setDrawableBlur(imageDrawable: Drawable, radius: Int) {
+        setDrawableBlur(imageDrawable, radius, 10)
     }
 
-    fun setBitmapBlurry(bitmapBlur: Bitmap, radius: Int, blurPercentage: Int) {
+    fun setDrawableBlur(imageDrawable: Drawable) {
+        setDrawableBlur(imageDrawable, 10, 10)
+    }
+
+    fun setBitmapBlur(bitmapBlur: Bitmap, radius: Int, blurPercentage: Int) {
         val height = bitmapBlur.height
         val width = bitmapBlur.width
         val bg = ThumbnailUtils.extractThumbnail(bitmapBlur, width * blurPercentage / 100, height * blurPercentage / 100)
         imageView.setImageBitmap(GaussianBlur.blurred(context, bg, radius))
     }
 
+    fun setBitmapBlur(bitmapBlur: Bitmap, radius: Int) {
+        setBitmapBlur(bitmapBlur, radius, 10)
+    }
+
+    fun setBitmapBlur(bitmapBlur: Bitmap) {
+        setBitmapBlur(bitmapBlur, 10, 10)
+    }
+
     companion object {
         private val DEFAULT_BLUR_COLOR = Color.WHITE
-        private var BLUR_COLOR: Int=0
+        private var BLUR_COLOR: Int = 0
         private val DEFAULT_BLUR_RADIUS = 10
-        private var BLUR_RADIUS: Int=10
+        private var BLUR_RADIUS: Int = 10
         private val DEFAULT_ALPHA = 0.3f
-        private var ALPHA: Float=10F
+        private var ALPHA: Float = 10F
     }
 }
