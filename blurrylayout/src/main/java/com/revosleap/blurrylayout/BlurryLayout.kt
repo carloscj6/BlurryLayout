@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.media.ThumbnailUtils
+import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.view.View
 import android.widget.FrameLayout
@@ -27,7 +28,7 @@ class BlurryLayout @JvmOverloads constructor(context: Context, attrs: AttributeS
         View.inflate(context, R.layout.blurry_layout, this)
         linearLayout = findViewById(R.id.linearLayout)
         imageView = findViewById(R.id.imageView)
-        DEFAULT_IMAGE = resources.getDrawable(R.drawable.image)
+        DEFAULT_IMAGE = ContextCompat.getDrawable(context, R.drawable.image)!!
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.BlurryLayout, defStyleAttr, 0)
         BLUR_COLOR = typedArray.getColor(R.styleable.BlurryLayout_blurColor, DEFAULT_BLUR_COLOR)
         ALPHA = typedArray.getFloat(R.styleable.BlurryLayout_blurOpacity, DEFAULT_ALPHA)
@@ -49,6 +50,7 @@ class BlurryLayout @JvmOverloads constructor(context: Context, attrs: AttributeS
             try {
                 imageView.setImageBitmap(GaussianBlur.blurred(context, image!!, BLUR_RADIUS))
             } catch (e: NullPointerException) {
+                e.printStackTrace()
             }
         }
 
