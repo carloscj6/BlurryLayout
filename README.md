@@ -5,6 +5,7 @@ Use this layout to place views above it while keeping the background awesome. Us
 with a cool layout that matches your needs
 
 [ ![Download](https://api.bintray.com/packages/carloscj6/layout/blurrylayout/images/download.svg) ](https://bintray.com/carloscj6/layout/blurrylayout/_latestVersion)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4af81cd6d4934c7eb01940c998e08e7d)](https://app.codacy.com/app/carloscj6/BlurryLayout?utm_source=github.com&utm_medium=referral&utm_content=carloscj6/BlurryLayout&utm_campaign=Badge_Grade_Dashboard)
 [![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
 
 ## Screenshot
