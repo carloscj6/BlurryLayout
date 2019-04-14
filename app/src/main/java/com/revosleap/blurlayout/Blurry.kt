@@ -17,7 +17,7 @@ class Blurry : AppCompatActivity() {
         setContentView(R.layout.activity_blurry)
         blurLayout = findViewById(R.id.blurLayout)
         val image = BitmapFactory.decodeResource(resources, R.drawable.medium_cover)
-        blurLayout!!.setBitmapBlur(image)
+        blurLayout?.setBitmapBlur(image)
 
     }
 }

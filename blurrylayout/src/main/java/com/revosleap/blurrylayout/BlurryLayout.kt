@@ -12,7 +12,9 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 
-
+/**
+ * @property BlurryLayout custom layout that extends FrameLayout
+ */
 class BlurryLayout @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0)
     : FrameLayout(context, attrs, defStyleAttr) {
     private val linearLayout: LinearLayout
@@ -34,7 +36,7 @@ class BlurryLayout @JvmOverloads constructor(context: Context, attrs: AttributeS
         setImageBg()
     }
 
-    // Set linear layout properties
+
     private fun setImageBg() {
         val bg: Drawable
         if (imageDrawable != null) {
@@ -42,8 +44,8 @@ class BlurryLayout @JvmOverloads constructor(context: Context, attrs: AttributeS
             setDrawableBlur(imageDrawable)
         } else {
             bg = DEFAULT_IMAGE
-            val image = (bg as BitmapDrawable).bitmap
-            imageView.setImageBitmap(GaussianBlur.blurred(context, image, BLUR_RADIUS))
+            val image = (bg as? BitmapDrawable)?.bitmap
+            imageView.setImageBitmap(GaussianBlur.blurred(context, image!!, BLUR_RADIUS))
         }
 
         linearLayout.setBackgroundColor(BLUR_COLOR)
@@ -51,15 +53,23 @@ class BlurryLayout @JvmOverloads constructor(context: Context, attrs: AttributeS
 
     }
 
-
+    /**
+     * @param blurColor - the color atop the blurred layout.
+     */
     fun blurColor(blurColor: Int) {
         linearLayout.setBackgroundColor(blurColor)
     }
 
+    /**
+     * @param bluropacity - the opacity of the blurred layout
+     */
     fun blurOpacity(bluropacity: Float) {
         linearLayout.alpha = bluropacity
     }
 
+    /**
+     * set background image for the blurred background from drawable resource
+     */
     fun setDrawableBlur(imageDrawable: Drawable, radius: Int, blurPercentage: Int) {
         val image = (imageDrawable as BitmapDrawable).bitmap
         val height = image.height
@@ -68,14 +78,23 @@ class BlurryLayout @JvmOverloads constructor(context: Context, attrs: AttributeS
         imageView.setImageBitmap(GaussianBlur.blurred(context, background, radius))
     }
 
+    /**
+     * set background image for the blurred background from drawable resource
+     */
     fun setDrawableBlur(imageDrawable: Drawable, radius: Int) {
         setDrawableBlur(imageDrawable, radius, 10)
     }
 
+    /**
+     * set background image for the blurred background from drawable resource
+     */
     fun setDrawableBlur(imageDrawable: Drawable) {
         setDrawableBlur(imageDrawable, 10, 10)
     }
 
+    /**
+     * set background image for the blurred background from bitmap image
+     */
     fun setBitmapBlur(bitmapBlur: Bitmap, radius: Int, blurPercentage: Int) {
         val height = bitmapBlur.height
         val width = bitmapBlur.width
@@ -83,10 +102,16 @@ class BlurryLayout @JvmOverloads constructor(context: Context, attrs: AttributeS
         imageView.setImageBitmap(GaussianBlur.blurred(context, bg, radius))
     }
 
+    /**
+     * set background image for the blurred background from bitmap image
+     */
     fun setBitmapBlur(bitmapBlur: Bitmap, radius: Int) {
         setBitmapBlur(bitmapBlur, radius, 10)
     }
 
+    /**
+     * set background image for the blurred background from bitmap image
+     */
     fun setBitmapBlur(bitmapBlur: Bitmap) {
         setBitmapBlur(bitmapBlur, 10, 10)
     }
