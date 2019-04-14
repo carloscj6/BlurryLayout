@@ -4,7 +4,7 @@ Create a beautiful blurry background with simple code and less work.
 Use this layout to place views above it while keeping the background awesome. Use your image and colors to come up 
 with a cool layout that matches your needs
 
-[ ![Download](https://api.bintray.com/packages/carloscj6/layout/blurrylayout/images/download.svg?version=1.0.2) ](https://bintray.com/carloscj6/layout/blurrylayout/1.0.2/link)
+[ ![Download](https://api.bintray.com/packages/carloscj6/layout/blurrylayout/images/download.svg) ](https://bintray.com/carloscj6/layout/blurrylayout/_latestVersion)
 [![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
 
 ## Screenshot
@@ -15,7 +15,7 @@ First include the library in your project with:
 
 ```gradle
 dependencies {
-    implementation 'com.revosleap.layout:blurrylayout:1.0.2'
+    implementation 'com.revosleap.layout:blurrylayout:1.0.3'
 }
 ```
 
@@ -78,19 +78,15 @@ val blurLayout = findViewById(R.id.blurLayout) as BlurryLayout
 Set image and blur radius as:
 > Java
 ```java
-blurLayout.setBitmapBlurry(bitmap,20);
+blurLayout.setBitmapBlur(bitmap);
 ```
-if you have a bigger image that doesn't look well with above code just do this;
-```java
-blurLayout.setBitmapBlurry(bitmap,10,20);
-```
-whereby the second int is the amount of resizing to achieve desired blur.
-
 > Kotlin
 ```kotlin
-blurLayout.setBitmapBlurry(bitmap,20);
+blurLayout.setBitmapBlurry(bitmap);
 ```
-**Note:** blur radius takes ```int```. It determines the amount of the blur effect.
+> **Note:** radius takes ```int```. It determines the radius of the blur effect on the image.
+
+> **Note:** blurPercentage takes ```int```. It determines the the percentage of the blur.
 
 ### Blur color
 Set as:
@@ -108,7 +104,8 @@ This is the color of the background blur.
 
 Can be determined by the color of views above it. Example,
 textviews with light color will need a darker blur color and vice versa. 
-**Note:** blur color takes `int`.
+
+> **Note:** blur color takes `int`.
 
 ### Blur opacity
 set as:
