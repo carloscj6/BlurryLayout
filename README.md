@@ -16,7 +16,7 @@ First include the library in your project with:
 
 ```gradle
 dependencies {
-    implementation 'com.revosleap.layout:blurrylayout:1.0.3'
+    implementation 'com.revosleap.layout:blurrylayout:2.0.0'
 }
 ```
 
