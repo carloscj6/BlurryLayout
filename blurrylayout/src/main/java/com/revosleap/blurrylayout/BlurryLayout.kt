@@ -67,7 +67,7 @@ class BlurryLayout @JvmOverloads constructor(context: Context, attrs: AttributeS
     }
 
     /**
-     * @param blurOpacity - the opacity of the blurred layout
+     * @param bluropacity - the opacity of the blurred layout
      */
     fun blurOpacity(bluropacity: Float) {
         linearLayout.alpha = bluropacity
