@@ -6,7 +6,7 @@ import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.media.ThumbnailUtils
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import android.util.AttributeSet
 import android.view.View
 import android.widget.FrameLayout
@@ -67,7 +67,7 @@ class BlurryLayout @JvmOverloads constructor(context: Context, attrs: AttributeS
     }
 
     /**
-     * @param bluropacity - the opacity of the blurred layout
+     * @param blurOpacity - the opacity of the blurred layout
      */
     fun blurOpacity(bluropacity: Float) {
         linearLayout.alpha = bluropacity

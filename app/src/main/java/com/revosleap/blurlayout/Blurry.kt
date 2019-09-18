@@ -2,7 +2,7 @@ package com.revosleap.blurlayout
 
 import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.WindowManager
 import com.revosleap.blurrylayout.BlurryLayout
 
